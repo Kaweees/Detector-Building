@@ -4,7 +4,7 @@ Enjoy!
 ## Installation Instructions
 You can download or modify the program by Cloning or Downloading the project or by saving it as a ".zip" file.
 Once the downloaded file is extracted into a separate folder, follow these instructions:
-### Python Setup
+### Arduino Setup
 1. Install `Arduino 1.8.9` or the latest version.
 2. Documentation for Arduino could be found [here](https://www.arduino.cc/reference/en) and [here](https://www.arduino.cc/reference/en)
 
