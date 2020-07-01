@@ -10,7 +10,7 @@ Once the downloaded file is extracted into a separate folder, follow these instr
 
 ## Running
 ### Before Compiling
-1. Open `thermometer.ino``stop`
+1. Open `thermometer.ino`
 2. Change the board so that it matches the model of your board `Tools > Board`
 
 ### Compilation
