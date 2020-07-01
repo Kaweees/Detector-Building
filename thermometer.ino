@@ -1,23 +1,25 @@
+// imports
 #include <LiquidCrystal_I2C.h> // Library for LCD
-
+// setup devices
 LiquidCrystal_I2C lcd = LiquidCrystal_I2C(0x27, 16, 2);
 const int ThermistorPin = A0; // thermisistor model: TMP36
+const int greenLED = 11; // green LED
+const int redLED = 12; // red LED
+const int blueLED = 13; // blue LED
+// change these in accordance with proctor decision
+// the LEDs will light up if the temperature is within a certain range 
+const int greenMin = 15; // green LED range Min 
+const int greenMax = 25; // green LED range Max
+const int redMin = 25; // green LED range Min
+const int redMax = 35; // green LED range Max
+const int blueMin = 35; // green LED range Min
+const int blueMax =  45; // green LED range Max
 
 float Vout = 0; // Volyage between thermisistor and resistor of known resistance (in milliVolts)
 int Vin = 5; // the original voltage in Volts
 float temp = 0; // in degrees Celsius
-const int greenLED = 11; // green LED
-const int redLED = 12; // red LED
-const int blueLED = 13; // blue LED
-
-const int greenMin = 15;
-const int greenMax = 25;
-const int redMin = 25;
-const int redMax = 35;
-const int blueMin = 35;
-const int blueMax =  45;
-
 int count = 0;
+
 void setup() {
   lcd.init(); // Initiate the LCD
   lcd.backlight();
@@ -28,27 +30,27 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
+  // get the the temperature based off of the thermisitor's voltage
   Vout = (analogRead(ThermistorPin) * ((Vin)/1024.0)); // the voltage at the thermistor Pin
   temp = (((Vout) - 0.5) * 100.0);
   lcd.setCursor(0, 0); // Set the cursor on the first column and first row
   lcd.print("Temp: " + String(temp) + char(223) + "C" );
   lcd.setCursor(0, 1); //Set the cursor on the third column and the second row (counting starts at 0!).
   lcd.print("Voltage: " + String(Vout) + " V" );
-
-  //temp = int(temp);
-  if (greenMin <= temp and temp < greenMax){
-    digitalWrite(greenLED, HIGH);     // turn the LED on (HIGH is the voltage level)
+  // lighting up the LEDs based on the temperature:
+  if (greenMin <= temp and temp < greenMax){ 
+    digitalWrite(greenLED, HIGH);     // turn the green LED on (HIGH is the voltage level) if the temperature is within a certain range 
     }
   else if ((redMin <= temp) and (temp < redMax)){
-    digitalWrite(redLED, HIGH);     // turn the LED on (HIGH is the voltage level)
-    }
+    digitalWrite(redLED, HIGH);     // turn the red LED on (HIGH is the voltage level) if the temperature is within a certain range 
+  }
   else if ((blueMin <= temp) and (temp < blueMax)){
-    digitalWrite(blueLED, HIGH);     // turn the LED on (HIGH is the voltage level)
-    }
+    digitalWrite(blueLED, HIGH);     // turn the blue LED on (HIGH is the voltage level) if the temperature is within a certain range 
+  }
   else{
-    digitalWrite(greenLED, LOW);
+    digitalWrite(greenLED, LOW); // all the LEDs off (LOW is the voltage level) if the temperature is out of all of the LEDs' ranges 
     digitalWrite(redLED, LOW);
     digitalWrite(blueLED, LOW);
-    }
+  }
   delay(1000);
 }
