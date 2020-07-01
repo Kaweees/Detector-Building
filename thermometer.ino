@@ -1,7 +1,6 @@
 /* I2C LCD with Arduino example code. More info: https://www.makerguides.com */
 // Include the libraries:
 // LiquidCrystal_I2C.h: https://github.com/johnrickman/LiquidCrystal_I2C 
-#include <Wire.h> // Library for I2C communication
 #include <LiquidCrystal_I2C.h> // Library for LCD
 // Wiring: SDA pin is connected to A4 and SCL pin to A5.
 // Connect to LCD via I2C, default address 0x27 (A0-A2 not jumpered)
@@ -11,9 +10,8 @@ const int thermisistorPin = A0; // thermisistorPin
 const int redLED = 11; // red LED
 const int greenLED = 12; // green LED
 const int yellowLED = 13; // yellow LED
-
-
 int count = 0;
+
 void setup() {
   // Initiate the LCD:
   lcd.init();
