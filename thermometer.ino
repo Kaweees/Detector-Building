@@ -8,12 +8,13 @@ const int redLED = 12; // red LED
 const int blueLED = 13; // blue LED
 // change these in accordance with proctor decision
 // the LEDs will light up if the temperature is within a certain range 
-const int greenMin = 15; // green LED range Min 
+
+const int greenMin = 0; // green LED range Min 
 const int greenMax = 25; // green LED range Max
 const int redMin = 25; // green LED range Min
-const int redMax = 35; // green LED range Max
-const int blueMin = 35; // green LED range Min
-const int blueMax =  45; // green LED range Max
+const int redMax = 50; // green LED range Max
+const int blueMin = 50; // green LED range Min
+const int blueMax =  75; // green LED range Max
 
 float Vout = 0; // Volyage between thermisistor and resistor of known resistance (in milliVolts)
 int Vin = 5; // the original voltage in Volts
