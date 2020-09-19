@@ -1,5 +1,5 @@
 # Detector-Building
-In this repository, you will find example Arduino code for a constructed circiut for the Science Olympiad event Detector Building. More info on the event could be found [here](https://scioly.org/wiki/index.php/Detector_Building) Rules for 2020 (the year this circuit was optimized for), can be found [here](http://www.astro.wisc.edu/~wakker/ScienceOlympiadRules/C_DetectorBuilding.pdf)
+In this repository, you will find example Arduino code for a constructed circuit for the Science Olympiad event Detector Building. More info on the event could be found [here](https://scioly.org/wiki/index.php/Detector_Building) Rules for 2020 (the year this circuit was optimized for), can be found [here](http://www.astro.wisc.edu/~wakker/ScienceOlympiadRules/C_DetectorBuilding.pdf)
 Enjoy!
 ## Installation Instructions
 You can download or modify the program by Cloning or Downloading the project or by saving it as a ".zip" file.
